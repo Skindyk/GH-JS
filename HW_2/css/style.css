@@ -1,0 +1,38 @@
+﻿/**Some uber styles :/ **/
+body {
+		margin: 0;
+	}
+.container {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 1170px;
+	height: 100%;
+	background-color: #ecf0f1;
+	text-align: center;
+}
+h1, h2, h4 {
+	margin: 0 0 10px;
+}
+h2 {
+	margin-top: 10px;
+}
+p {
+	margin: 0;
+}
+.info {
+	margin-bottom: 20px;
+}
+li {
+	width: 35%;
+	margin: 0 auto;
+}
+button {
+	padding: 13px 35px 12px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	border-radius: 22px;
+	border: 0;
+	background-color: #11b7c8;
+	cursor: pointer;
+}
