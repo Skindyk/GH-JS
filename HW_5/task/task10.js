@@ -49,7 +49,6 @@ function capsLock(str) {
     return result;
 }
 
-
 tasks.push({
     title: "cAPS lOCK",
     solution: capsLock,
