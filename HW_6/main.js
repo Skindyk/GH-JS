@@ -1,4 +1,7 @@
-﻿function newElement() {
+﻿
+
+
+function newElement() {
   var li = document.createElement("li");
   var liVal = document.createElement("span");
   var inputValue = document.getElementById("doInput").value;
@@ -81,4 +84,4 @@ for (i = 0; i < modify.length; i++) {
 	  var modified = prompt('Modify?', liVal.innerText);
 	  liVal.innerText = modified;
     }
-  }
+}
