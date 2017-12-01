@@ -113,3 +113,7 @@ function createNewTodo() {
 
     newElement(newTodoModel);
 }
+
+
+var el = document.getElementById('todoList');
+var sortable = Sortable.create(el);
