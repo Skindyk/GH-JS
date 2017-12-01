@@ -1,38 +1,46 @@
 ﻿var todoList = [];
 
+var savedTodosData = localStorage.getItem('todo');
+if(savedTodosData) {
+    var savedTodos = JSON.parse(savedTodosData);
 
-function newElement() {
+    savedTodos.forEach(function(todoModel) {
+        newElement(todoModel);
+    });
+}
+
+function newElement(todoModel) {
+
     var input = document.getElementById('doInput');
+    var li = null;
+
     /*check for empty input*/
-    if (input.value === '') {
+    if (todoModel.value === '') {
         alert("Write something!");
+        return;
     } else {
-        var li = document.createElement('li');
+        li = document.createElement('li');
         var liText = document.createElement('span');
-        liText.innerText = input.value;
-        todoList.push(liText.innerText);
+        liText.innerText = todoModel.value;
         liText.className = "litext";
         li.appendChild(liText);
         var ul = document.getElementById('todoList');
         ul.appendChild(li);
-        document.getElementById("doInput").value = "";
-
+        input.value = "";
     }
-
     /*Remove*/
     var rmbtn = document.createElement("button");
     var rmTxt = document.createTextNode("\u00D7");
     rmbtn.className = "remove";
     rmbtn.appendChild(rmTxt);
     li.appendChild(rmbtn);
-    var close = document.getElementsByClassName("remove");
-    var i;
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
-        }
-    }
+
+    rmbtn.addEventListener("click", function(event) {
+        var div = this.parentElement;
+        div.style.display = "none";
+        todoList.shift();
+        updateLocalStorageData();
+    });
 
     /*Edit*/
     var editBtn = document.createElement("button");
@@ -41,19 +49,19 @@ function newElement() {
     editBtn.appendChild(editTxt);
     li.appendChild(editBtn);
     var edit = document.getElementsByClassName("edit");
-    var b;
-    for (b = 0; b < edit.length; b++) {
-        edit[b].onclick = function() {
-            var divB = this.parentElement.firstChild;
-            var modified = prompt('Modify?', divB.innerText);
-            /*check for promt cancel*/
-            if (modified === null) {
-                modified = divB.innerText;
-            } else {
-                divB.innerText = modified;
-            }
+
+    editBtn.addEventListener("click", function(event) {
+        var divB = this.parentElement.firstChild;
+        var modified = prompt('Modify?', divB.innerText);
+        /*check for promt cancel*/
+        if (modified === null) {
+            modified = divB.innerText;
+        } else {
+            divB.innerText = modified;
         }
-    }
+
+        updateLocalStorageData();
+    });
 
     /*Finish*/
     var finBtn = document.createElement("button");
@@ -61,22 +69,30 @@ function newElement() {
     finBtn.className = "finish";
     finBtn.appendChild(finTxt);
     li.appendChild(finBtn);
-    var done = document.getElementsByClassName("finish");
-    var a;
-    for (a = 0; a < done.length; a++) {
-        done[a].onclick = function() {
-            var divA = this.parentElement;
-            if (divA.style.backgroundColor === "lightgreen") {
-                divA.style.backgroundColor = "#8bd1f2";
-            } else {
-                divA.style.backgroundColor = "lightgreen";
-            }
+
+    finBtn.addEventListener("click", function(event) {
+        todoModel.isDone = !todoModel.isDone;
+        checkTodoDoneState(todoModel.isDone, li);
+        updateLocalStorageData();
+    });
+
+    checkTodoDoneState(todoModel.isDone, li);
+    function checkTodoDoneState(todoIsDone, todoDivA) {
+        if(todoIsDone) {
+            todoDivA.style.backgroundColor = "lightgreen";
+        } else {
+            todoDivA.style.backgroundColor = "#8bd1f2";
         }
     }
-    var todo = liText.innerText;
-    localStorage.setItem('todo', JSON.stringify(todoList));
-
+    todoList.push(todoModel);
+    updateLocalStorageData();
 }
+
+/*Update LocalStorage*/
+function updateLocalStorageData() {
+    localStorage.setItem('todo', JSON.stringify(todoList));
+}
+
 /*Reverse*/
 function reverse() {
     var ulList = document.getElementById("todoList");
@@ -86,4 +102,14 @@ function reverse() {
     }
 }
 
+/*Creates new todo*/
+function createNewTodo() {
+    var todoNameInput = document.getElementById('doInput');
 
+    var newTodoModel = {
+        value: todoNameInput.value,
+        isDone: false
+    };
+
+    newElement(newTodoModel);
+}
