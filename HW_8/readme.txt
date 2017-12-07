@@ -1,1 +1,1 @@
-﻿Live: http://skindyk.at.ua/HW7_1/index.html
+﻿Live: http://skindyk.at.ua/hw8/index.html
