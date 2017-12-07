@@ -1,36 +1,70 @@
-﻿var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15, 0];
-var winArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15, 0];
-var i;
-var steps = 0;
-
-
-//Рисуем борду
-
-
-
-
-
-for (i=0; i<16; i++) {
-    document.getElementById('board').innerHTML+='<div class="block"></div>';
-    var block = document.getElementsByClassName('block');
-    block.innerHTML+='i';
+﻿var arr = [], board, ei,ej;
+var steps = 0;						
+function swap(arr,i1,j1,i2,j2){				
+	t = arr[i1][j1];
+	arr[i1][j1] = arr[i2][j2];
+	arr[i2][j2] = t;
 }
-
-
-
-
-
-
-
-
-document.getElementById('board').onclick = function () {
-
-    steps++;
-    document.getElementById('steps').innerHTML = steps;
-};
-
-
-
-
-
-
+window.onload = function() {				
+	board = document.getElementById("board");
+	newGame();								
+}
+function cellClick(event) {
+	var event = event || window.event,
+		el = event.srcElement || event.target,
+		i = el.id.charAt(0),
+		j = el.id.charAt(2);
+	if((i == ei && Math.abs(j - ej) == 1) || (j == ej && Math.abs(i - ei) == 1)){					
+		document.getElementById(ei + " " + ej).innerHTML = el.innerHTML;
+		el.innerHTML = "";
+		ei = i;
+		ej = j;
+		steps++;
+		document.getElementById('steps').innerHTML = steps;
+		var q = true;
+		for(i = 0; i < 4; ++i)
+			for(j = 0; j < 4; ++j)
+				if(i + j != 6 && document.getElementById(i + " " + j).innerHTML != i*4 + j + 1){
+					q = false;
+					break;
+				}
+				if(q) alert("Победа!");
+			}
+}
+function newGame(){			
+	for(i = 0; i < 4; ++i){
+		arr[i] = []
+		for(j = 0; j < 4; ++j){
+			if(i + j != 6)
+				arr[i][j] = i*4 + j + 1;
+			else
+				arr[i][j] = "";
+		}
+	}
+	ei = 3;
+	ej = 3;
+	for(i = 0; i < 1600; ++i)
+		switch(Math.round(3*Math.random())){
+			case 0: if(ei != 0) swap(arr,ei,ej,--ei,ej); break;
+			case 1: if(ej != 3) swap(arr,ei,ej,ei, ++ej); break;
+			case 2: if(ei != 3) swap(arr,ei,ej,++ei,ej); break;
+			case 3: if(ej != 0) swap(arr,ei,ej,ei,--ej);
+		}
+	var table = document.createElement("table"),
+		tbody = document.createElement("tbody");					
+	table.appendChild(tbody);
+	for(i = 0; i < 4; ++i){
+		var row = document.createElement("tr");
+		for(j = 0; j < 4; ++j){
+			var cell = document.createElement("td");
+				cell.id = i + " " + j;
+				cell.onclick = cellClick;
+				cell.innerHTML = arr[i][j];
+				row.appendChild(cell);
+		}
+		tbody.appendChild(row);					
+	}
+	if(board.childNodes.length == 1)
+		board.removeChild(board.firstChild);	
+	board.appendChild(table);	
+}
