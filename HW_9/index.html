@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>JS HW 9</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+<div class="container">
+	<h1>Geocode API</h1>
+	<div id="floating-panel">
+		<input id="address" type="textbox" placeholder="Type the address...">
+		<input id="submit" type="button" value="Geocode">
+	</div>
+	<div id="map"></div>
+	<div id="temp"></div>
+</div>
+
+<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHViYqAXYgXOmSyryW9XPWy4szeRVaXxw&callback=initMap">
+</script>
+<script src="main.js"></script>
+</body>
+</html>
