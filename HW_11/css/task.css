@@ -1,0 +1,77 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    max-width: 1140px;
+    margin: 0 auto 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+}
+
+#todo-list {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#todo-list ul {
+    padding: 0;
+}
+
+#todo-list li {
+    display: block;
+    padding: 5px;
+    font-size: 20px;
+    font-family: Verdana;
+    background-color: grey;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#todo-list li button {
+    float: right;
+    padding:5px;
+    border: none;
+
+}
+#todo-list li button:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.move-down {
+    background-color: dodgerblue;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.move-up {
+    background-color: limegreen;
+}
+.delete {
+    background-color: yellow;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.text {
+
+}
+.date {
+    font-size: 12px;
+}
+form input:last-child {
+    background-color: darkorange;
+    border: none;
+    padding: 3px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+form input:last-child:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
