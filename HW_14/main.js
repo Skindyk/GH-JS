@@ -2,7 +2,7 @@
 
 function perform() {
 	//TODO implement =>
-	 var res = new Promise((resolve, reject) => {
+	var res = new Promise((resolve, reject) => {
         var func = arguments[1];
         var pars = arguments[0];
         resolve(func(pars));
