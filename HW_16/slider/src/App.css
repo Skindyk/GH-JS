@@ -1,0 +1,35 @@
+body {
+  background: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11710503.jpg");
+  background-size: cover;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.slider {
+
+  margin: 20px 0;
+  height: 300px;
+  width: 500px;
+  display: inline-block;
+}
+.slider ul li {
+  position: relative;
+  width: 480px;
+  height: 360px;
+  display: inline-block
+}
+.slider ul li img {
+  height: 100%;
+  width: 100%;
+}
+.slider ul li .description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 10px 15px;
+  background-color: #403d34;
+  color: #fff;
+}
