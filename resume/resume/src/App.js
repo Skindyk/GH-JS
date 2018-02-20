@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Route, Link, Switch, Redirect } from 'react-router-dom'
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import FontAwesome from 'react-fontawesome';
 import Home from './Components/Home/Home';
 import Resume from './Components/Resume/Resume';
 import Skills from './Components/Skills/Skills';
@@ -34,6 +35,30 @@ class App extends Component {
               />
           </Switch>
         </div>
+        <footer>
+            <div className='contact-phone'>
+                <p>Call me</p>
+                <a href="tel:+38(093)7859688">+38(093)7859688</a>
+            </div>
+            <div className='contact-mail'>
+                <p>Mail me</p>
+                <a href="mailto:skindyk@yandex.ru">skindyk@yandex.ru</a>
+            </div>
+            <div className='contact-social'>
+                <p>Find me</p>
+                <div className="social-media">
+                    <a href="facebook.com">
+                        <FontAwesome name="mobile" size="2x"/>
+                    </a>
+                    <a href="facebook.com">
+                        <FontAwesome name="envelope" size="2x"/>
+                    </a>
+                    <a href="facebook.com">
+                        <FontAwesome name="facebook" size="2x"/>
+                    </a>
+                </div>
+            </div>
+        </footer>
       </div>
     );
   }
