@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
@@ -28,7 +27,6 @@ class App extends Component {
             </nav>
           </div>
         </header>
-
         <div className='routes'>
           <Switch>
             <Route exact path='/' component={Home} />
