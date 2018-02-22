@@ -1,6 +1,12 @@
 h1, h2, h3, p {
   margin: 0;
 }
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 .logo {
   color: white;
 }
@@ -11,7 +17,6 @@ h1, h2, h3, p {
   font-size: 18px;
 }
 .header-container ul {
-  list-style: none;
   display: flex;
 }
 .header-container ul li {
@@ -65,7 +70,6 @@ h1, h2, h3, p {
 }
 .footer-info a {
   color: white;
-  text-decoration: none;
 }
 .footer-info a:hover {
   color: orange;
@@ -80,6 +84,8 @@ h1, h2, h3, p {
   max-width: 1170px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 .home-photo img {
   border-radius: 50%;
@@ -87,4 +93,48 @@ h1, h2, h3, p {
   max-width: 380px;
   max-height: 380px;
   object-fit: cover;
+}
+.home-info h2 {
+  font-size: 80px;
+  color: #4D4D4D;
+  font-family: "Times New Roman", sans-serif;
+}
+.home-info h3 {
+  font-size: 46px;
+  color: #4D4D4D;
+  font-family: "Times New Roman", sans-serif;
+}
+.home-info p {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 15px;
+  line-height: 17px;
+  max-width: 500px;
+}
+.home-info ul {
+  display: flex;
+}
+.home-info a {
+  display: block;
+  margin-right: 10px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  color: white;
+}
+.home-info a:hover {
+  transition: all 0.5s;
+  filter: contrast(200%);
+  color: #4D4D4D;
+  font-weight: bold;
+}
+.resume-link a {
+  background-color: #e83555;
+}
+.skills-link a {
+  background-color: #60d1d5;
+}
+.contacts-link a {
+  background-color: #d2c927;
 }
