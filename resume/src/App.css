@@ -138,3 +138,52 @@ a {
 .contacts-link a {
   background-color: #d2c927;
 }
+.resume-container {
+  margin: 0 auto;
+  padding: 30px 0;
+  max-width: 1170px;
+}
+.resume-container h2 {
+  margin-bottom: 20px;
+  font-size: 80px;
+  color: #4D4D4D;
+  font-family: "Times New Roman", sans-serif;
+}
+.resume-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.resume-content h3 {
+  font-size: 80px;
+  color: #4D4D4D;
+  font-family: "Times New Roman", sans-serif;
+}
+.resume-info {
+  margin: 0;
+  padding: 0;
+}
+.resume-info li {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-top: 1px solid #8b8b8b;
+}
+.resume-info span {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  padding: 5px;
+  background-color: #4196e0;
+  border-radius: 50%;
+  line-height: 100px;
+  color: white;
+}
+.resume-info p {
+  max-width: 500px;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 15px;
+  line-height: 17px;
+  color: #4D4D4D;
+}
