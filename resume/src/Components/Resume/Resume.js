@@ -56,11 +56,6 @@ class Resume extends Component {
                         </li>
                     </ul>
                 </div>
-
-
-
-
-
             </div>
         )
     }

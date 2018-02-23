@@ -7,6 +7,9 @@ ul {
 a {
   text-decoration: none;
 }
+.app {
+  background-color: #ebe5e5;
+}
 .logo {
   color: white;
 }
@@ -93,6 +96,7 @@ a {
   max-width: 380px;
   max-height: 380px;
   object-fit: cover;
+  filter: grayscale(60%);
 }
 .home-info h2 {
   font-size: 80px;
@@ -138,7 +142,7 @@ a {
 .contacts-link a {
   background-color: #d2c927;
 }
-.resume-container {
+.resume-container, .contact-container {
   margin: 0 auto;
   padding: 30px 0;
   max-width: 980px;
@@ -201,7 +205,7 @@ a {
 }
 .skills-list, .language-list {
   padding-top: 20px!important;
-  border-top: 1px solid grey;
+  border-top: 1px solid #8b8b8b;
 }
 .resume-sidebar .fa {
   width: 60px;
@@ -211,4 +215,98 @@ a {
   border-radius: 50%;
   text-align: center;
   line-height: 60px;
+}
+
+
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 80px;
+    color: #4D4D4D;
+    font-family: "Times New Roman", sans-serif;
+}
+.contact-list .social {
+  margin-bottom: 20px;
+}
+.contact-list .social .fa {
+  background-color: #4195e0;
+  padding: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: white;
+}
+.contact-list .social .fa:hover {
+  background-color: orange;
+  transition: all 0.2s;
+}
+.contact-list .phone {
+  display: flex;
+  flex-direction: column;
+}
+.contact-list .phone a {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #4D4D4D;
+}
+.contact-list .phone a:hover {
+  color: orange;
+  transition: all 0.5s;
+}
+.contact-right-part p {
+  margin-bottom: 20px;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 15px;
+  line-height: 17px;
+  color: #4D4D4D;
+}
+.contact-right-part form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.contact-right-part form input, textarea{
+  padding: 5px;
+  margin: 0 0 20px 0;
+  width: 400px;
+  border: 1px solid #4196e0;
+  background-color: #4196e0;
+  color: white;
+  font-size: 14px;
+}
+.contact-right-part form textarea {
+  min-height: 120px;
+}
+input[type=submit] {
+  cursor: pointer;
+  height: 30px;
+  width: 95px!important;
+}
+.contact-right-part form input:last-child {
+  float: right;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
 }
