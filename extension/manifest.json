@@ -1,0 +1,29 @@
+{
+  "short_name": "uExtension",
+  "name": "uCoz chrome extension",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "images/logo-16.png",
+    "default_title": "uCoz extension"
+  },
+  "icons": {
+    "16": "images/logo-16.png",
+    "48": "images/logo-48.png",
+    "128": "images/logo-128.png"
+  },
+  "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*"],
+        "js": ["content.js"],
+        "css": ["content.css"],
+        "run_at": "document_end"
+      }
+    ],
+    "permissions":[
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+        ],
+  "version": "1.0"
+}

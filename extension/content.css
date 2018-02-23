@@ -1,0 +1,28 @@
+.uExtension_core {
+  position: fixed !important;
+  display: flex;
+  bottom: 10px !important;
+  right: 75px !important;
+  background-color: #5190f9 !important;
+  padding: 0 10px !important;
+  border-radius: 10px !important;
+  z-index: 1000;
+}
+.uExtension_core a {
+  display: block;
+  color: white !important;
+  margin-left: 5px !important;
+  padding: 3px !important;
+  font-size: 15px !important;
+  line-height: normal !important;
+  font-family: 'Open Sans',sans-serif !important;
+
+}
+.uExtension_core a:hover {
+  transition: all 0.5s !important;
+  text-decoration: none !important;
+  background-color: grey !important;
+}
+.uExtension_core a:first-child {
+  margin-left: 0 !important;
+}
