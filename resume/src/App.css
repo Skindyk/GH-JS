@@ -142,7 +142,7 @@ a {
 .contacts-link a {
   background-color: #d2c927;
 }
-.resume-container, .contact-container {
+.resume-container, .contact-container, .skills-container  {
   margin: 0 auto;
   padding: 30px 0;
   max-width: 980px;

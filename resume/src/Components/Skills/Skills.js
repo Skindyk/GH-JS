@@ -5,8 +5,8 @@ import FontAwesome from 'react-fontawesome';
 class Skills extends Component {
     render () {
         return (
-            <div>
-
+            <div className="skills-container">
+                Skills page
             </div>
         )
     }
