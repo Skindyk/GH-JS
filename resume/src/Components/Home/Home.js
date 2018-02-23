@@ -6,10 +6,10 @@ export default class Home extends Component {
     return (
       <div className="home-container">
         <div className="home-photo">
-          <img src="images\photo.jpg"></img>
+          <img src="images\photo.jpg" alt="skindyk-photo"></img>
         </div>
         <div className="home-info">
-          <h2>Hallo,</h2>
+          <h2>Hello,</h2>
           <h3>Let's met:</h3>
           <ul>
               <li className="resume-link"><Link to='/resume'>Resume</Link></li>
