@@ -13,17 +13,17 @@
     "128": "images/logo-128.png"
   },
   "content_scripts": [
-      {
-        "matches": ["https://*/*", "http://*/*"],
-        "js": ["content.js"],
-        "css": ["content.css"],
-        "run_at": "document_end"
-      }
-    ],
-    "permissions":[
-        "tabs",
-        "http://*/*",
-        "https://*/*"
-        ],
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions":[
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
   "version": "1.0"
 }
